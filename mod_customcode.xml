@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>mod_customcode</name>
+	<author>flutterderp</author>
+	<creationDate>Aug 24, 2018</creationDate>
+	<license>GNU General Public License v3.0 or later; see LICENSE</license>
+	<authorUrl>https://github.com/flutterderp/mod_customcode/</authorUrl>
+	<version>1.0.0</version>
+	<description>mod_customcode__xml_description</description>
+
+	<files>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>LICENSE</filename>
+		<filename module="mod_customcode">mod_customcode.php</filename>
+		<filename>mod_customcode.xml</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_customcode.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_customcode.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+				<field
+					name="code_area"
+					description="MOD_CUSTOMCODE_FIELD_CODE_AREA_DESC"
+					label="MOD_CUSTOMCODE_FIELD_CODE_AREA_LABEL"
+					type="textarea"
+					default=""
+					cols="40"
+					rows="10"
+					filter="raw" />
+
+				<field
+					name="use_php"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_USE_PHP_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_USE_PHP_DESC"
+					class="btn-group btn-group-yesno"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="clean_js"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_CLEAN_JS_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_CLEAN_JS_DESC"
+					class="btn-group btn-group-yesno"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="clean_css"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_CLEAN_CSS_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_CLEAN_CSS_DESC"
+					class="btn-group btn-group-yesno"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="clean_all"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_CLEAN_ALL_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_CLEAN_ALL_DESC"
+					class="btn-group btn-group-yesno"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+
+				<field
+					name="prepare_content"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_PREPARE_CONTENT_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_PREPARE_CONTENT_DESC"
+					class="btn-group btn-group-yesno"
+					default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="append_moduleclass"
+					type="radio"
+					label="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_LABEL"
+					description="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_DESC"
+					class="btn-group btn-group-yesno"
+					default="1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+
+				</field>
+
+				<field
+					name="cache"
+					type="radio" class="btn-group btn-group-yesno"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option value="static"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
