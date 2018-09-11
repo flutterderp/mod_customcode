@@ -5,7 +5,7 @@
 	<creationDate>Aug 24, 2018</creationDate>
 	<license>GNU General Public License v3.0 or later; see LICENSE</license>
 	<authorUrl>https://github.com/flutterderp/mod_customcode/</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>mod_customcode__xml_description</description>
 
 	<files>
@@ -43,7 +43,7 @@
 					label="MOD_CUSTOMCODE_FIELD_USE_PHP_LABEL"
 					description="MOD_CUSTOMCODE_FIELD_USE_PHP_DESC"
 					class="btn-group btn-group-yesno"
-					default="1">
+					default="0">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
@@ -114,7 +114,7 @@
 					label="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_LABEL"
 					description="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_DESC"
 					class="btn-group btn-group-yesno"
-					default="1">
+					default="0">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 
