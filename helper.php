@@ -67,11 +67,12 @@ class Customcode
 		{
 			// Create a temporary file to write our code to
 			$tmp_file = tempnam(JPATH_SITE . '/tmp', 'html');
-			$handle   = fopen($tmp_file, 'w');
+			$handle   = fopen($tmp_file, 'w+');
+			$length   = strlen($codeblock);
 
 			// Write to the temporary file
-			fwrite($handle, $codeblock, strlen($codeblock));
-			fclose($handle);
+			fwrite($handle, $codeblock, $length);
+			// fclose($handle);
 
 			// Include/execute the temporary file
 			ob_start();
@@ -79,6 +80,8 @@ class Customcode
 			$module_content = ob_get_clean();
 
 			// And delete it after we're done
+			ftruncate($handle, 0);
+			fclose($handle);
 			unlink($tmp_file);
 		}
 		else
