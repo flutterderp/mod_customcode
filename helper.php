@@ -86,7 +86,7 @@ class Customcode
 			$module_content = $codeblock;
 		}
 
-		return $module_content;
+		return trim($module_content);
 	}
 
 	/**

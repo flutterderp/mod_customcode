@@ -21,4 +21,7 @@ $load_plugincontent = (int) $params->get('load_plugincontent', 0);
 $customcode      = new Customcode($params);
 $module->content = $customcode->parseCode();
 
-require JModuleHelper::getLayoutPath('mod_customcode', $params->get('layout', 'default'));
+if (!empty($module->content))
+{
+	require JModuleHelper::getLayoutPath('mod_customcode', $params->get('layout', 'default'));
+}
