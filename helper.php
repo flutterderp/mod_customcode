@@ -5,7 +5,7 @@
  * Parsing/cleaning functions adapted from Flexi Custom Code by RBO Team > Project::: RumahBelanja.com & AppsNity.com.
  * https://extensions.joomla.org/extension/flexi-custom-code/
  *
- * @version 1.0.0
+ * @version 1.0.3
  * @author flutterderp
  * @package Joomla
  * @license GNU General Public License v3.0 or later; see LICENSE
@@ -42,7 +42,7 @@ class Customcode
 	 *
 	 * @return module_content
 	 */
-	function parseCode()
+	function parseCode(stdClass $module)
 	{
 		$codeblock = $this->codeblock;
 
@@ -66,8 +66,9 @@ class Customcode
 		if ((int) $this->use_php === 1)
 		{
 			// Create a temporary file to write our code to
-			$tmp_file = tempnam(JPATH_SITE . '/tmp', 'html');
-			$handle   = fopen($tmp_file, 'w');
+			$tmp_file  = tempnam(JPATH_SITE . '/tmp', 'html');
+			$handle    = fopen($tmp_file, 'w');
+			$module_id = (int) $module->id;
 
 			// Write to the temporary file
 			fwrite($handle, $codeblock, strlen($codeblock));
