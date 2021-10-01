@@ -12,6 +12,9 @@
  */
 
 defined('_JEXEC') or die;
+
+use Joomla\CMS\Helper\ModuleHelper;
+
 require_once(__DIR__ . '/helper.php');
 
 $append_moduleclass = (int) $params->get('append_moduleclass', 1);
@@ -25,5 +28,5 @@ $module->content = $customcode->parseCode($module);
 
 if (!empty($module->content))
 {
-	require JModuleHelper::getLayoutPath('mod_customcode', $params->get('layout', 'default'));
+	require ModuleHelper::getLayoutPath('mod_customcode', $params->get('layout', 'default'));
 }
