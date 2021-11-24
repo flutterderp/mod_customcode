@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.6" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
 	<name>mod_customcode</name>
 	<author>flutterderp</author>
-	<creationDate>Aug 24, 2018</creationDate>
+	<creationDate>Nov 23, 2021</creationDate>
 	<license>GNU General Public License v3.0 or later; see LICENSE</license>
 	<authorUrl>https://github.com/flutterderp/mod_customcode/</authorUrl>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<description>mod_customcode__xml_description</description>
 
 	<files>
@@ -99,14 +99,16 @@
 				<field
 					name="layout"
 					type="modulelayout"
+					class="form-select"
 					label="JFIELD_ALT_LAYOUT_LABEL"
-					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					validate="moduleLayout" />
 
 				<field
 					name="moduleclass_sfx"
 					type="textarea"
 					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					validate="CssIdentifier" />
 
 				<field
 					name="append_moduleclass"
@@ -114,7 +116,7 @@
 					label="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_LABEL"
 					description="MOD_CUSTOMCODE_FIELD_APPEND_MODULECLASS_DESC"
 					class="btn-group btn-group-yesno"
-					default="0">
+					default="1">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 
@@ -124,8 +126,7 @@
 					name="cache"
 					type="radio" class="btn-group btn-group-yesno"
 					default="1"
-					label="COM_MODULES_FIELD_CACHING_LABEL"
-					description="COM_MODULES_FIELD_CACHING_DESC">
+					label="COM_MODULES_FIELD_CACHING_LABEL">
 					<option value="1">JGLOBAL_USE_GLOBAL</option>
 					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
 				</field>
@@ -134,8 +135,7 @@
 					name="cache_time"
 					type="text"
 					default="900"
-					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL" />
 
 				<field
 					name="cachemode"
