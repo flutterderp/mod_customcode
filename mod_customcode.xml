@@ -5,7 +5,7 @@
 	<creationDate>Nov 23, 2021</creationDate>
 	<license>GNU General Public License v3.0 or later; see LICENSE</license>
 	<authorUrl>https://github.com/flutterderp/mod_customcode/</authorUrl>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<description>mod_customcode__xml_description</description>
 
 	<files>
@@ -107,8 +107,7 @@
 				<field
 					name="moduleclass_sfx"
 					type="textarea"
-					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					validate="CssIdentifier" />
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" />
 
 				<field
 					name="append_moduleclass"
