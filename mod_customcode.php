@@ -13,10 +13,13 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
 
 require_once(__DIR__ . '/helper.php');
 
+$app                = Factory::getApplication();
+$moduleclass        = $app->isClient('administrator') ? 'mod-custom' : 'customcode';
 $append_moduleclass = (int) $params->get('append_moduleclass', 1);
 $moduleclass_sfx    = $params->get('moduleclass_sfx', '');
 $load_plugincontent = (int) $params->get('load_plugincontent', 0);
